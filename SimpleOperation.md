@@ -1,5 +1,7 @@
 # LaTeX 使用教程扩展版
 
+本文的完整示例包含中文，请在 Overleaf 的项目设置中选择 **XeLaTeX** 编译器，并使用 `ctexart` 文档类。`inputenc` 只负责输入编码，不能单独提供中文排版支持。
+
 ## 1. 文本格式
 
 ### 常见文本格式操作
@@ -17,8 +19,7 @@
 ### 示例代码
 
 ```latex
-\documentclass{article}
-\usepackage[utf8]{inputenc}
+\documentclass[UTF8]{ctexart}
 \usepackage{ulem} % 删除线
 \usepackage{xcolor} % 颜色支持
 \begin{document}
@@ -74,8 +75,7 @@ a^2 + b^2 = c^2
 ### 示例代码
 
 ```latex
-\documentclass{article}
-\usepackage[utf8]{inputenc}
+\documentclass[UTF8]{ctexart}
 \usepackage{amsmath}
 \begin{document}
 
@@ -205,11 +205,13 @@ Cherry & 2.00   & Yes \\
 
 ### 1. 中文支持问题
 
-加载中文字体包：
+本文的完整示例已经使用 `ctexart`，不需要重复加载 `ctex`。如果沿用 `article` 等其他文档类，可在导言区加载：
 
 ```latex
-\usepackage{ctex}
+\usepackage[UTF8]{ctex}
 ```
+
+在 Overleaf 的项目设置中选择 **XeLaTeX** 后重新编译。
 
 ### 2. 编译错误
 
